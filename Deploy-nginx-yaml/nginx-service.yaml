@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: modernapps-nginx
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    run: modernapps-nginx
+  type: LoadBalancer

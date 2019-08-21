@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: modernapps-nginx
+spec:
+  selector:
+    matchLabels:
+      run: modernapps-nginx
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: modernapps-nginx
+    spec:
+      containers:
+      - name: modernapps-nginx
+        image: harbor.cpod-bbrundert01.az-lab.shwrfr.com/summerschool/modernapps-nginx:v2
+        ports:
+        - containerPort: 80
+
